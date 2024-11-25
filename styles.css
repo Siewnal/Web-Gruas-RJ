@@ -1,277 +1,333 @@
 /* Estilos Generales */
-body {
-  font-family: Arial, sans-serif;
+* {
   margin: 0;
   padding: 0;
-  background-color: #f4f8fb; /* Fondo blanco con un toque suave de celeste */
-  color: #333;
+  box-sizing: border-box;
 }
 
+body {
+  font-family: 'Poppins', Arial, sans-serif;
+  background-color: #f7f9fc; /* Color suave para el fondo */
+  color: #333;
+  line-height: 1.6;
+}
+
+h1, h2 {
+  font-family: 'Montserrat', sans-serif; /* Fuente profesional */
+  color: #1f2a44; /* Azul oscuro */
+  margin-bottom: 15px;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+p {
+  font-size: 1.1em;
+  color: #6c757d; /* Gris oscuro para texto */
+  margin-bottom: 20px;
+  line-height: 1.7;
+  transition: color 0.3s ease;
+}
+
+p:hover {
+  color: #007bff; /* Resaltar texto al pasar el cursor */
+}
+
+/* Barra de Navegación */
 nav {
-  background-color: #00FFFF; /* Cian brillante (Aqua) */
+  background-color: #003366; /* Azul oscuro */
   color: white;
-  padding: 15px 20px;
+  padding: 15px 0;
   position: fixed;
   top: 0;
   width: 100%;
-  z-index: 10;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  z-index: 1000;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Sombra para destacar */
+  transition: background-color 0.3s ease;
+}
+
+nav:hover {
+  background-color: #005b82; /* Cambia a un azul más claro al pasar el mouse */
 }
 
 nav ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
+  list-style: none;
   display: flex;
   justify-content: center;
+  align-items: center;
+  padding: 0;
 }
 
 nav ul li {
   margin: 0 30px;
-  padding: 10px 20px; /* Añadir padding para hacer más grande el área del enlace */
-  border-radius: 5px; /* Bordes redondeados */
-  transition: background-color 0.3s ease; /* Transición suave */
-}
-
-/* Efecto de oscurecimiento progresivo en los elementos de la lista */
-nav ul li:nth-child(1) {
-  background-color: #00FFFF; /* Cian brillante */
-}
-
-nav ul li:nth-child(2) {
-  background-color: #00E6E6; /* Un tono más oscuro */
-}
-
-nav ul li:nth-child(3) {
-  background-color: #00CCCC; /* Más oscuro */
-}
-
-nav ul li:nth-child(4) {
-  background-color: #00B3B3; /* Un tono más oscuro */
-}
-
-nav ul li:nth-child(5) {
-  background-color: #009999; /* Más oscuro */
-}
-
-/* Efecto hover para todos los elementos */
-nav ul li:hover {
-  background-color: #00B8B8; /* Cambiar el fondo de todo el elemento */
+  font-weight: 500;
 }
 
 nav ul li a {
   color: white;
   text-decoration: none;
-  font-size: 18px;
-  font-weight: 600;
-  transition: color 0.3s ease;
+  font-size: 1.1em;
+  padding: 10px;
+  display: block;
+  transition: color 0.3s ease, transform 0.3s ease;
+  border-radius: 5px;
 }
 
 nav ul li a:hover {
-  color: #f4f8fb; /* Cambiar color del texto al pasar el ratón */
+  color: #f4f8fb; /* Blanco al hacer hover */
+  background-color: #005b82; /* Azul intermedio */
+  transform: translateY(-2px); /* Efecto de elevación */
 }
 
-/* Sección General */
-section {
-  padding: 80px 20px;
+nav ul li:hover a {
+  color: #f4f8fb;
+}
+
+/* Sección de Inicio */
+#inicio {
+  background-color: white; /* Fondo blanco */
+  height: 100vh;
   text-align: center;
-  margin-top: 60px; /* Espacio para la barra de navegación fija */
-}
-
-h1, h2 {
-  font-size: 2.5em;
-  color: #00FFFF; /* Título en cian brillante */
-  margin-bottom: 20px;
-}
-
-p {
-  font-size: 1.2em;
-  color: #555;
-  line-height: 1.6;
-}
-
-/* Estilo del Carrusel */
-.carousel {
+  padding: 100px 20px;
+  color: #333; /* Texto oscuro para contraste */
   display: flex;
-  overflow: hidden;
   justify-content: center;
-  margin: 20px 0;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
 }
 
-.carousel img {
-  width: 100%;
-  max-width: 650px; /* Asegura que las imágenes no sean demasiado grandes */
-  border-radius: 10px; /* Bordes redondeados */
-  transition: transform 0.5s ease;
+#inicio h1 {
+  font-size: 3.5em;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+  animation: fadeIn 1s ease-out;
 }
 
-/* Estilo del botón */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+#inicio p {
+  font-size: 1.2em;
+  font-weight: 300;
+  margin-bottom: 30px;
+  animation: fadeInUp 1s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 button {
-  padding: 12px 25px;
+  padding: 12px 30px;
   background-color: #28a745; /* Verde claro */
   color: white;
   border: none;
-  border-radius: 8px; /* Bordes más suaves */
-  cursor: pointer;
+  border-radius: 5px;
   font-size: 1.1em;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 button:hover {
-  background-color: #218838; /* Verde más oscuro cuando pasa el ratón */
-  transform: scale(1.05); /* Efecto de aumentar el tamaño ligeramente */
+  background-color: #218838;
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
 button:active {
-  transform: scale(1); /* Vuelve al tamaño normal cuando se hace clic */
+  transform: scale(1);
 }
 
-/* Estilo del botón de Emergencia */
+/* Carrusel */
+.carousel {
+  position: relative;
+  display: flex;
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center; /* Centra verticalmente */
+  gap: 15px;
+  padding: 20px 0;
+  overflow: hidden;
+  width: 100%; /* Asegura que ocupe todo el ancho disponible */
+  max-width: 800px; /* Limita el ancho máximo si es necesario */
+  margin: 0 auto; /* Centra el contenedor en la página */
+}
+
+/* Contenedor de los items del carrusel */
+.carousel-item {
+  width: 100%; /* O ajusta según lo necesario */
+  max-width: 100%; /* Asegúrate de que las imágenes no se desborden */
+}
+
+
+/* Ocultar las imágenes inicialmente */
+.carousel-item {
+  display: none;
+}
+
+/* Estilos para las imágenes */
+.carousel img {
+  width: 100%;
+  max-width: 800px;
+  border-radius: 8px;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.carousel img:hover {
+  transform: scale(1.05);
+  filter: brightness(1.1); /* Brillo al pasar el cursor */
+}
+
+
+@keyframes carouselAnimation {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-100%); }
+  50% { transform: translateX(-200%); }
+  75% { transform: translateX(-300%); }
+  100% { transform: translateX(0); }
+}
+
+/* Controles de navegación */
+button.prev, button.next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
+  border: none;
+  font-size: 2em;
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 50%;
+  z-index: 10;
+  transition: background-color 0.3s ease;
+}
+
+button.prev {
+  left: 10px;
+}
+
+button.next {
+  right: 10px;
+}
+
+button:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+@keyframes carouselAnimation {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-100%); }
+  50% { transform: translateX(-200%); }
+  75% { transform: translateX(-300%); }
+  100% { transform: translateX(0); }
+}
+
+/* Estilo del Botón de Emergencia */
 #emergencia {
   position: fixed;
-  bottom: 80px; /* Ajuste para que esté debajo de "Solicitar servicio" */
+  bottom: 20px;
   right: 20px;
-  background-color: #dc3545; /* Rojo de emergencia */
-  font-size: 1.3em;
-  padding: 15px 30px;
+  background-color: #dc3545; /* Rojo */
+  font-size: 1.2em;
+  padding: 12px 30px;
   color: white;
   border: none;
   border-radius: 50px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-  transition: background-color 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 #emergencia:hover {
-  background-color: #c82333; /* Rojo más oscuro */
-  transform: scale(1.1); /* Efecto de aumentar el tamaño */
+  background-color: #c82333;
+  transform: scale(1.1);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
 #emergencia:active {
-  transform: scale(1); /* Vuelve al tamaño normal cuando se hace clic */
+  transform: scale(1);
 }
 
-/* Estilo para las secciones de contacto y solicitud */
-#solicitar-servicio a {
-  text-decoration: none;
-}
-
-#solicitar-servicio button {
-  background-color: #17a2b8; /* Celeste suave para el botón de WhatsApp */
-}
-
-#solicitar-servicio button:hover {
-  background-color: #138496; /* Celeste más oscuro */
-}
-
-/* Estilo para los enlaces */
+/* Enlaces */
 a {
   color: #007bff;
   text-decoration: none;
+  transition: color 0.3s ease;
 }
 
 a:hover {
   color: #0056b3;
+  text-decoration: underline;
 }
 
-/* Media Queries para dispositivos más pequeños */
+/* Marca de Propiedad */
+#marca {
+  text-align: center;
+  padding: 30px 0;
+  font-size: 1.2em;
+  color: #6c757d;
+}
+
+#marca span {
+  font-weight: 600;
+}
+
+#marca .year {
+  font-weight: 500;
+}
+
+/* Media Queries */
 @media (max-width: 768px) {
-  /* Barra de navegación */
   nav ul {
     flex-direction: column;
-    align-items: center;
   }
 
   nav ul li {
     margin: 10px 0;
   }
 
-  nav ul li {
-    margin: 0 30px;
-    padding: 10px 20px; /* Añadir padding para hacer más grande el área del enlace */
-    border-radius: 5px; /* Bordes redondeados */
-    transition: background-color 0.3s ease; /* Transición suave */
+  h1 {
+    font-size: 2.5em;
   }
 
-  nav ul li:hover {
-    background-color: #00B8B8; /* Cambiar el fondo de todo el elemento */
-  }
-
-  nav ul li a {
-    color: white;
-    text-decoration: none;
-    font-size: 18px;
-    font-weight: 600;
-    transition: color 0.3s ease;
-  }
-
-  nav ul li a:hover {
-    color: #f4f8fb; /* Cambiar color del texto al pasar el ratón */
-  }
-
-  /* Ajuste de los títulos */
-  h1, h2 {
-    font-size: 2em;
-  }
-
-  /* Ajuste de texto */
   p {
     font-size: 1em;
   }
 
-  /* Ajuste del carrusel */
   .carousel img {
-    max-width: 90%; /* Hacer las imágenes más pequeñas en pantallas pequeñas */
-  }
-
-  /* Ajuste de los botones */
-  button {
-    padding: 10px 20px;
-    font-size: 1em;
-  }
-
-  /* Botón de emergencia */
-  #emergencia {
-    font-size: 1.1em;
-    padding: 12px 25px;
+    max-width: 90%;
   }
 }
 
-/* Media Queries para dispositivos móviles (menos de 480px) */
 @media (max-width: 480px) {
   nav ul li a {
-    font-size: 16px;
+    font-size: 14px;
   }
 
-  .carousel img {
-    max-width: 100%; /* Las imágenes se adaptan al ancho completo */
-  }
-
-  section {
-    padding: 100px 20px 20px; /* Aumenta el padding superior para dar espacio debajo de la barra de navegación */
-    text-align: center;
-    margin-top: 60px; /* Asegura el espacio necesario debajo de la barra de navegación */
-  }
-
-  h1, h2 {
-    font-size: 2em; /* Títulos más pequeños para dispositivos pequeños */
-    color: #00FFFF;
-    margin-bottom: 20px;
-    margin-top: 60px; /* Evita que los títulos se superpongan con la barra de navegación */
+  h1 {
+    font-size: 2em;
   }
 
   p {
-    font-size: 1em; /* Ajuste de tamaño de fuente del texto */
-  }
-
-  /* Ajustes de botones */
-  button {
-    padding: 10px 20px;
-    font-size: 1em; /* Ajusta el tamaño de los botones */
+    font-size: 0.95em;
   }
 
   #emergencia {
-    font-size: 1.1em;
-    padding: 12px 25px;
+    font-size: 1em;
+    padding: 10px 20px;
   }
 }
