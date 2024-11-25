@@ -10,6 +10,11 @@ body {
   background-color: #f7f9fc; /* Color suave para el fondo */
   color: #333;
   line-height: 1.6;
+  display: flex;
+  flex-direction: column; /* Asegura que los elementos se apilen verticalmente */
+  align-items: center; /* Centra horizontalmente */
+  justify-content: center; /* Centra verticalmente */
+  min-height: 100vh; /* Asegura que el contenedor ocupe toda la altura de la ventana */
 }
 
 h1, h2 {
@@ -78,30 +83,52 @@ nav ul li a:hover {
   transform: translateY(-2px); /* Efecto de elevación */
 }
 
-nav ul li:hover a {
-  color: #f4f8fb;
-}
-
-/* Sección de Inicio */
-#inicio {
-  background-color: white; /* Fondo blanco */
-  height: 100vh;
-  text-align: center;
-  padding: 100px 20px;
-  color: #333; /* Texto oscuro para contraste */
+#inicio, #sobre-nosotros {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  position: relative;
+  width: 100%;
+  text-align: center;
 }
 
-#inicio h1 {
-  font-size: 3.5em;
-  font-weight: 600;
-  text-transform: uppercase;
+#inicio {
+  padding: 100px 20px;
+}
+
+#sobre-nosotros {
+  background-color: #f4f4f4; /* Fondo gris claro */
+  padding: 20px;
+}
+
+.about-box {
+  background-color: #fff;
+  border: 2px solid #3498db;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  width: 90%;
+  max-width: 800px;
+  transition: transform 0.3s ease;
+}
+
+.about-box:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
+.about-box h2 {
+  font-size: 28px;
+  color: #3498db;
   margin-bottom: 15px;
-  animation: fadeIn 1s ease-out;
+}
+
+.about-box p {
+  font-size: 18px;
+  color: #333;
+  line-height: 1.6;
+  text-align: justify;
+  margin-bottom: 15px;
 }
 
 @keyframes fadeIn {
@@ -133,7 +160,7 @@ nav ul li:hover a {
 
 button {
   padding: 12px 30px;
-  background-color: #28a745; /* Verde claro */
+  background-color: #1ac843; /* Verde claro */
   color: white;
   border: none;
   border-radius: 5px;
@@ -173,7 +200,6 @@ button:active {
   max-width: 100%; /* Asegúrate de que las imágenes no se desborden */
 }
 
-
 /* Ocultar las imágenes inicialmente */
 .carousel-item {
   display: none;
@@ -192,16 +218,7 @@ button:active {
   filter: brightness(1.1); /* Brillo al pasar el cursor */
 }
 
-
-@keyframes carouselAnimation {
-  0% { transform: translateX(0); }
-  25% { transform: translateX(-100%); }
-  50% { transform: translateX(-200%); }
-  75% { transform: translateX(-300%); }
-  100% { transform: translateX(0); }
-}
-
-/* Controles de navegación */
+/* Estilo para los controles de carrusel */
 button.prev, button.next {
   position: absolute;
   top: 50%;
@@ -227,14 +244,6 @@ button.next {
 
 button:hover {
   background-color: rgba(0, 0, 0, 0.8);
-}
-
-@keyframes carouselAnimation {
-  0% { transform: translateX(0); }
-  25% { transform: translateX(-100%); }
-  50% { transform: translateX(-200%); }
-  75% { transform: translateX(-300%); }
-  100% { transform: translateX(0); }
 }
 
 /* Estilo del Botón de Emergencia */
@@ -318,16 +327,78 @@ a:hover {
     font-size: 14px;
   }
 
-  h1 {
+  #inicio h1 {
     font-size: 2em;
   }
 
-  p {
-    font-size: 0.95em;
-  }
-
   #emergencia {
-    font-size: 1em;
+    font-size: 1.5em;
     padding: 10px 20px;
   }
+}
+/* Estilos para los íconos de redes sociales */
+#redes-sociales {
+  text-align: center;
+  margin: 30px 0;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.social-icon {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+}
+
+.social-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+}
+
+.social-icon:hover img {
+  transform: scale(1.1);
+}
+
+/* Estilos para los iconos de redes sociales */
+a {
+  font-size: 1.2em;
+  color: #333;
+  text-decoration: none;
+  margin: 10px;
+  display: flex;
+  align-items: center;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #007bff;
+}
+
+a i {
+  margin-right: 8px; /* Espacio entre el icono y el texto */
+}
+
+/* Estilo de WhatsApp */
+a.whatsapp {
+  color: #25D366; /* Verde de WhatsApp */
+}
+
+a.whatsapp:hover {
+  color: #128C7E; /* Verde más oscuro */
+}
+
+/* Estilo de TikTok */
+a.tiktok {
+  color: #000000; /* Negro para TikTok */
+}
+
+a.tiktok:hover {
+  color: #69C9D0; /* Azul claro de TikTok */
 }
