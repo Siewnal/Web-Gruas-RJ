@@ -366,39 +366,19 @@ a:hover {
   transform: scale(1.1);
 }
 
-/* Estilos para los iconos de redes sociales */
-a {
-  font-size: 1.2em;
-  color: #333;
-  text-decoration: none;
-  margin: 10px;
-  display: flex;
-  align-items: center;
-  transition: color 0.3s ease;
+/* Estilos para cada red social */
+.social-icon.facebook img {
+  border: 2px solid #1877f2;
 }
 
-a:hover {
-  color: #007bff;
+.social-icon.instagram img {
+  border: 2px solid #e1306c;
 }
 
-a i {
-  margin-right: 8px; /* Espacio entre el icono y el texto */
+.social-icon.whatsapp img {
+  border: 2px solid #25d366;
 }
 
-/* Estilo de WhatsApp */
-a.whatsapp {
-  color: #25D366; /* Verde de WhatsApp */
-}
-
-a.whatsapp:hover {
-  color: #128C7E; /* Verde más oscuro */
-}
-
-/* Estilo de TikTok */
-a.tiktok {
-  color: #000000; /* Negro para TikTok */
-}
-
-a.tiktok:hover {
-  color: #69C9D0; /* Azul claro de TikTok */
+.social-icon.tiktok img {
+  border: 2px solid #010101;
 }
